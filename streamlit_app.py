@@ -17,7 +17,9 @@ def scrape_and_save(startPage, endPage):
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
 
-        driver = webdriver.Chrome(options=chrome_options)
+        chromedriver_path = "./chromedriver"
+        driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
+
         base_url = "https://tenders.etimad.sa/Tender/AllTendersForVisitor?&MultipleSearch=&TenderCategory=&ReferenceNumber=&TenderNumber=&agency=&ConditionaBookletRange=&PublishDate=&LastOfferPresentationDate=&LastOfferPresentationDate=&TenderAreasIdString=&TenderTypeId=NaN&TenderSubActivityId=&AgencyCode=&FromLastOfferPresentationDateString=&ToLastOfferPresentationDateString=&SortDirection=DESC&Sort=SubmitionDate&PageSize=24&IsSearch=true&ConditionaBookletRange=&PublishDate=undefined&PageNumber={}"
 
         date_of_publication = []
